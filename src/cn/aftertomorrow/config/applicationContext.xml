@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+	<bean id="phone" class="cn.aftertomorrow.po.Phone">
+		<property name="brand" value="meizu"></property>
+		<property name="model" value="pro6plus"></property>
+		<property name="price" value="2999"></property>
+	</bean>
+	<bean id="person" class="cn.aftertomorrow.po.Person">
+		<property name="name" value="huangming"></property>
+		<property name="age" value="20"></property>
+		<property name="sex" value="man"></property>
+		<property name="phone" ref="phone"></property>
+	</bean>
+</beans>
