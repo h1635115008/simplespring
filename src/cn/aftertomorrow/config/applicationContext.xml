@@ -11,4 +11,8 @@
 		<property name="sex" value="man"></property>
 		<property name="phone" ref="phone"></property>
 	</bean>
+	<bean id="animal" class="cn.aftertomorrow.po.Animal">
+		<property name="name" value="huangming"></property>
+		<property name="kind" value="cat"></property>
+	</bean>
 </beans>
