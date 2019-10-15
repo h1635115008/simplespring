@@ -24,6 +24,11 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
 		// TODO Auto-generated constructor stub
 		try {
 			beanConfigs = ConfigReader.readConfig(xmlPath);
+			for (String name : beanConfigs.keySet()) {
+				if (beanConfigs.get(name).getScope().equals("singleton")) {
+					beans.put(name, createBean(name));
+				}
+			}
 		} catch (DocumentException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -33,13 +38,13 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
 	@Override
 	public Object getBean(String name) {
 		// TODO Auto-generated method stub
-		Object bean = null;
-		if (beans.get(name) == null) {
-			bean = createBean(name);
+		if (beanConfigs.get(name).getScope().equals("prototype")) {
+			System.out.println("2222");
+			return createBean(name);
 		} else {
-			bean = beans.get(name);
+			System.out.println("2222");
+			return beans.get(name);
 		}
-		return bean;
 	}
 
 	private Object createBean(String name) {
@@ -141,8 +146,9 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
 			IllegalArgumentException, IllegalAccessException, InstantiationException {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
 				"cn/aftertomorrow/config/applicationContext.xml");
-		System.out.println(context.getBean("phone"));
+		System.out.println(context.getBean("phone") == context.getBean("phone"));
 		System.out.println(context.getBean("animal"));
+		System.out.println(context.getBean("animal") == context.getBean("animal"));
 		// try {
 		// Method m = String.class.getDeclaredMethod("equals", String.class);
 		// System.out.println(m.invoke(new String("hello"), "hello"));

@@ -1,8 +1,5 @@
 package cn.aftertomorrow.config;
 
-import java.io.File;
-import java.io.Reader;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -29,13 +26,13 @@ public class ConfigReader {
 			Element parent = parents.next();
 			bean.setId(parent.attributeValue("id"));
 			bean.setClazz(parent.attributeValue("class"));
+			bean.setScope(parent.attributeValue("scope"));
 			Iterator<Element> childs = parent.elementIterator();
 			List<Property> properties = bean.getProperties();
 			// µÚ¶þ¼¶
 			while (childs.hasNext()) {
 				Element child = childs.next();
 				Property property = new Property();
-				System.out.println("hello");
 				property.setName(child.attributeValue("name"));
 				property.setRef(child.attributeValue("ref"));
 				property.setValue(child.attributeValue("value"));

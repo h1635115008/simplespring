@@ -6,6 +6,7 @@ import java.util.List;
 public class Bean {
 	private String id;
 	private String clazz;
+	private String scope;
 	private List<Property> properties = new ArrayList<>();
 
 	public String getId() {
@@ -24,6 +25,14 @@ public class Bean {
 		this.clazz = clazz;
 	}
 
+	public String getScope() {
+		return scope;
+	}
+
+	public void setScope(String scope) {
+		this.scope = scope;
+	}
+
 	public List<Property> getProperties() {
 		return properties;
 	}
@@ -34,7 +43,7 @@ public class Bean {
 
 	@Override
 	public String toString() {
-		return "Bean [id=" + id + ", clazz=" + clazz + ", properties=" + properties + "]";
+		return "Bean [id=" + id + ", clazz=" + clazz + ", scope=" + scope + ", properties=" + properties + "]";
 	}
 
 }

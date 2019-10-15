@@ -30,6 +30,14 @@ public class Person {
 		this.sex = sex;
 	}
 
+	public Phone getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Phone phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
 		return "Person [name=" + name + ", age=" + age + ", sex=" + sex + ", phone=" + phone + "]";
