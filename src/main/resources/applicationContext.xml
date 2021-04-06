@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
-	<bean id="phone" class="cn.aftertomorrow.po.Phone" scope="singleton">
+	<bean id="phone" class="cn.aftertomorrow.simplespring.po.Phone" scope="singleton">
 		<property name="brand" value="meizu"></property>
 		<property name="model" value="pro6plus"></property>
 		<property name="price" value="2999"></property>
 	</bean>
-	<bean id="person" class="cn.aftertomorrow.po.Person" scope="singleton">
+	<bean id="person" class="cn.aftertomorrow.simplespring.po.Person" scope="singleton">
 		<property name="name" value="huangming"></property>
 		<property name="age" value="20"></property>
 		<property name="sex" value="man"></property>
 		<property name="phone" ref="phone"></property>
 	</bean>
-	<bean id="animal" class="cn.aftertomorrow.po.Animal" scope="prototype">
+	<bean id="animal" class="cn.aftertomorrow.simplespring.po.Animal" scope="prototype">
 		<property name="name" value="huangming"></property>
 		<property name="kind" value="cat"></property>
 	</bean>
